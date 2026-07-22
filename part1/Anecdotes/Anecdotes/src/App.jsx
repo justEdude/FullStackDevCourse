@@ -56,7 +56,7 @@ const App = () => {
     const popularAnecdote = Math.max(...votes)
     return <div>{anecdotes[votes.indexOf(popularAnecdote)]} has {popularAnecdote} votes</div>
   }
-/* decided to fix my old for loop, succeeded, this is what it looks like now:
+/* decided to fix my old for loop, using the same solution that gemini gave me before, succeeded, this is what it looks like now:
 
   const displayMostVotes = () => {
     let value = 0;
