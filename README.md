@@ -3,3 +3,4 @@ activities 5 and 6 from part 0 have been finished.
 unicafe part1 concluded.
 all unicafe activities completed.
 all anecdote exercises concluded.
+CourseInfo exercises concluded (for now)
