@@ -1,11 +1,11 @@
 import Course from './components/Course'
-
+//calls the course component on each course of the bigger "courses" object
 const Deconstructor = (props) => {
   return (
     props.courses.map((x)=> <Course key = {x.id} courses = {x}/> )
   )
 }
-
+//holds all courses and parts objects and renders them
 const App = () => {
   const courses = [
     {

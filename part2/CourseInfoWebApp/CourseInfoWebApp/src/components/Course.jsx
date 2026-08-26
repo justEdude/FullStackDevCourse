@@ -1,4 +1,5 @@
 //structure and methods used are, as to be expected, mostly sourced from the course's content
+//responsible for the header
 const Header = (props) => {
 const name = props.courses.name
 console.log(props.courses)
@@ -11,7 +12,7 @@ return (
   </div>
 )
 }
-
+//displays the parts and exercises in a list
 const Part = (props) => {
 const {list} = props
   return(
@@ -28,6 +29,7 @@ const {list} = props
 
 learned i should use props.parts[0].data instead of just props[0].data
  */
+//gets the content of each part
 const Content = (props) => {
   console.log(props)
   const list = props.parts.map((x) => <li key = {x.id}> {x.name}, Exercises: {x.exercises}</li>)
@@ -39,8 +41,10 @@ const Content = (props) => {
   )
 }
 
+//obtains the total of exercises across all parts
 const Total = (props) => props.parts.reduce((sum, x) => sum + x.exercises ,0)
 
+//renders most components
 const Course = (props) => {
   const {courses} = props
   console.log(courses)
