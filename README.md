@@ -5,3 +5,4 @@ all unicafe activities completed.
 all anecdote exercises concluded.
 CourseInfo exercises concluded (for now)
 part 2 exercises, courseInfoWebApp, The Phonebook, and Data For Countries have been concluded
+part 3 activities concluded
