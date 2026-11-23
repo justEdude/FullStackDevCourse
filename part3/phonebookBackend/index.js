@@ -1,4 +1,4 @@
-//structure and methods used are, as to be expected, mostly sourced from the course's content
+//structure and methods used are, as to be expected, mostly sourced from the course's content, and relevant depedency documentation
 console.log('run works')
 require('dotenv').config()
 const Contact = require('./models/contact')
@@ -128,6 +128,7 @@ app.post('/api/persons', (request, response, next) => {
   // simple validation in case they are both empty because that would trigger both validation messages from mongoose
     return response.status(400).send({ error: 'both name and number fields need to be filled out' })
   }
+  //needed a method to validate in case simultaneous posting created clones, mongoose documentation showed me how to do this
   Contact.findOne({ name: body.name }).then( ret => {
     if(ret !== null){
       response.statusMessage = 'user with this name already present in the database, users need to be unique'
