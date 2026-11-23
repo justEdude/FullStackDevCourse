@@ -18,6 +18,14 @@ GET http://localhost:3001/api/persons/3
 ###
 GET http://localhost:3001/info
 
+###
+GET https://fullstackdevcourse-khjz.onrender.com/info
+
+###
+GET http://fullstackdevcourse-khjz.onrender.com/api/persons/6af33a72036dd4c5737c3114
+
+###
+GET https://fullstackdevcourse-khjz.onrender.com/api/persons/3
 
 
 

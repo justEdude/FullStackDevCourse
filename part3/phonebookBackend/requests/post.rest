@@ -73,3 +73,20 @@ Content-Type: application/json
     "name":"",
     "number": ""
 }
+
+###
+POST http://fullstackdevcourse-khjz.onrender.com/api/persons
+Content-Type: application/json
+
+{
+    "name": "localPost",
+    "number": "38-123456"
+}
+###
+POST http://fullstackdevcourse-khjz.onrender.com/api/persons
+Content-Type: application/json
+
+{
+    "name":"",
+    "number": ""
+}
