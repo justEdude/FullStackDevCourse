@@ -128,17 +128,24 @@ app.post('/api/persons', (request, response, next) => {
   // simple validation in case they are both empty because that would trigger both validation messages from mongoose
     return response.status(400).send({ error: 'both name and number fields need to be filled out' })
   }
-  const NewContact = new Contact({
-    name : body.name,
-    number : body.number,
+  Contact.findOne({ name: body.name }).then( ret => {
+    if(ret !== null){
+      response.statusMessage = 'user with this name already present in the database, users need to be unique'
+      return response.status(400).send({ error: 'user with this name already present in the database, users need to be unique' })
+    }else{
+      const NewContact = new Contact({
+        name : body.name,
+        number : body.number,
+      })
+      NewContact.save().then(contact => {
+        response.json(contact)
+      })
+        .catch(error => {
+          console.log(error.message)
+          next(error)
+        })
+    }
   })
-  NewContact.save().then(contact => {
-    response.json(contact)
-  })
-    .catch(error => {
-      console.log(error.message)
-      next(error)
-    })
 })
 //handles unknown endpoints
 const unknownEndpoint = (_request, response) => {
